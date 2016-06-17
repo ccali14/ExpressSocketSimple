@@ -1,24 +1,37 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Socket io</title>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-  </head>
-  <body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
 
-    <div class="dummy">
-      Hi!
-    </div>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <title>Hello World</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received dummy">Device is Ready</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="http://cdn.socket.io/socket.io-1.0.3.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+             var socket = io.connect('http://localhost:3000');
+             socket.emit('test', 'test');
 
-    <script type="text/javascript">
-       var socket = io();
-       socket.emit('test', 'test');
-
-        socket.on('test', function(msg){
-          $('.dummy').html(`${msg}`);
-        });
-    </script>
-  </body>
+              socket.on('test', function(msg){
+                $('.dummy').html(`${msg}`);
+              });
+          </script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
 </html>
