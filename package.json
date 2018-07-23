@@ -15,7 +15,7 @@
     "request": "^2.72.0",
     "sequelize": "^3.23.2",
     "socket.io": "^1.4.6",
-    "twilio": "^2.9.1",
+    "twilio": "^3.17.1",
     "yosay": "^1.1.1"
   },
   "description": "socket io package",
