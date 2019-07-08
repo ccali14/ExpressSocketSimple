@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": false,
   "scripts": {
-    "start": "nodemon --exec babel-node index.js"
+    "start": "nodemon --exec babel-node index.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "async": "^2.0.0-rc.5",
@@ -16,7 +18,8 @@
     "sequelize": "^3.23.2",
     "socket.io": "^1.4.6",
     "twilio": "^2.9.1",
-    "yosay": "^1.1.1"
+    "yosay": "^1.1.1",
+    "snyk": "^1.192.3"
   },
   "description": "socket io package",
   "main": "index.js",
@@ -38,5 +41,6 @@
     "eslint-plugin-import": "^1.8.1",
     "eslint-plugin-jsx-a11y": "^1.2.2",
     "eslint-plugin-react": "^5.1.1"
-  }
+  },
+  "snyk": true
 }
